@@ -2,26 +2,31 @@
 
 Fixed::Fixed()
 {
+	std::cout << "Default constructor called" << std::endl;
 	this->fixedPoint = 0;
 }
 
 Fixed::Fixed(const Fixed& other)
 {
+	std::cout << "Copy constructor called" << std::endl;
 	copy(other);
 }
 
 Fixed::Fixed(const	int		nu)
 {
+	std::cout << "Int constructor called" << std::endl;
 	this->fixedPoint = nu << this->fractBits;
 }
 
 Fixed::Fixed(const	float	nu)
 {
+	std::cout << "Float constructor called" << std::endl;
 	this->fixedPoint = roundf(nu * (1 << this->fractBits));
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
+	std::cout << "Assignation operator called" << std::endl;
 	copy(other);
 	return (*this);
 }
